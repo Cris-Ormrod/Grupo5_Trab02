@@ -1,0 +1,162 @@
+
+
+LES - Laboratório de Engenharia de Software DI/PUC-Rio
+      Arcabouço de teste de módulos C  (c) 2006
+
+---------------------------------------------
+      Construto sob teste: Trab02_TesteV2
+
+      Arquivo de teste:    TesteGradeHorario2.script
+
+
+!!!    0  Linha:     1  // Script:    TesteTurma.script 
+!!!    0  Linha:     2  // Autor:     Cristiane - Guilherme - Leonardo - Nathália 
+!!!    0  Linha:     3  // Data:      04/out/2017 
+!!!    0  Linha:     4  // Propósito: Testar módulo Grade de Horário 
+!!!    0  Linha:     5  // 
+!!!    0  Linha:     6  // 
+    8  == Declarar as condicoes de retorno
+   15  == Declarar os conteúdos dos nós
+   21  == Verificar Criar Grade de Horário
+   24  == Verificar Inserer Grade de Horario
+   27  == Verificar Inserer Grade de Horario
+   30  == Verificar Inserer Grade de Horario
+   33  == Verificar Inserer Grade de Horario
+   36  == Verificar Exibir Grade de Horario
+
+****** GRADE DE HORARIO ******
+
+NOME: Programacao II - CODIGO: INF1007 - CREDITOS: 4 - BIBLIOGRAFIA: Livro 1 - EMENTA: Ponteiros
+
+
+****** TURMA SELECIONADA ******
+
+Codigo: 3WA
+Horario de inicio: 13:00
+Horario de termino: 15:00
+Dias da semana: SEG-QUA
+Quantidade de vagas: 25
+
+Notas: G1: -1.0	G2: -1.0	G3: -1.0	G4: -1.0
+ Faltas: -1
+NOME: Software Basico - CODIGO: INF1018 - CREDITOS: 4 - BIBLIOGRAFIA: Livro 3 - EMENTA: Assembly
+
+
+****** TURMA SELECIONADA ******
+
+Codigo: 3WB
+Horario de inicio: 11:00
+Horario de termino: 13:00
+Dias da semana: SEG-QUA
+Quantidade de vagas: 30
+
+Notas: G1: -1.0	G2: -1.0	G3: -1.0	G4: -1.0
+ Faltas: -1
+NOME: BD1 - CODIGO: INF1383 - CREDITOS: 4 - BIBLIOGRAFIA: Livro BD1 - EMENTA: Dados
+
+
+****** TURMA SELECIONADA ******
+
+Codigo: 3WC
+Horario de inicio: 15:00
+Horario de termino: 17:00
+Dias da semana: TER-QUI
+Quantidade de vagas: 35
+
+Notas: G1: -1.0	G2: -1.0	G3: -1.0	G4: -1.0
+ Faltas: -1
+NOME: Programacao Modular - CODIGO: INF1301 - CREDITOS: 4 - BIBLIOGRAFIA: Livro Modular - EMENTA: Arcabouco
+
+
+****** TURMA SELECIONADA ******
+
+Codigo: 3WD
+Horario de inicio: 17:00
+Horario de termino: 19:00
+Dias da semana: TER-QUI
+Quantidade de vagas: 40
+
+Notas: G1: -1.0	G2: -1.0	G3: -1.0	G4: -1.0
+ Faltas: -1
+
+
+ <!> Cursor ja posicionado no final da lista <!> 
+
+
+   39  == Verificar Elimina No
+
+ <!> Cursor ja posicionado no final da lista <!> 
+
+
+>>>    1  Linha:    40  Retorno errado ao eliminar no. Deveria ser: 0  É: 3
+   42  == Verificar Exibir Grade de Horario
+
+****** GRADE DE HORARIO ******
+
+NOME: Programacao II - CODIGO: INF1007 - CREDITOS: 4 - BIBLIOGRAFIA: Livro 1 - EMENTA: Ponteiros
+
+
+****** TURMA SELECIONADA ******
+
+Codigo: 3WA
+Horario de inicio: 13:00
+Horario de termino: 15:00
+Dias da semana: SEG-QUA
+Quantidade de vagas: 25
+
+Notas: G1: -1.0	G2: -1.0	G3: -1.0	G4: -1.0
+ Faltas: -1
+NOME: Software Basico - CODIGO: INF1018 - CREDITOS: 4 - BIBLIOGRAFIA: Livro 3 - EMENTA: Assembly
+
+
+****** TURMA SELECIONADA ******
+
+Codigo: 3WB
+Horario de inicio: 11:00
+Horario de termino: 13:00
+Dias da semana: SEG-QUA
+Quantidade de vagas: 30
+
+Notas: G1: -1.0	G2: -1.0	G3: -1.0	G4: -1.0
+ Faltas: -1
+NOME: BD1 - CODIGO: INF1383 - CREDITOS: 4 - BIBLIOGRAFIA: Livro BD1 - EMENTA: Dados
+
+
+****** TURMA SELECIONADA ******
+
+Codigo: 3WC
+Horario de inicio: 15:00
+Horario de termino: 17:00
+Dias da semana: TER-QUI
+Quantidade de vagas: 35
+
+Notas: G1: -1.0	G2: -1.0	G3: -1.0	G4: -1.0
+ Faltas: -1
+NOME: Programacao Modular - CODIGO: INF1301 - CREDITOS: 4 - BIBLIOGRAFIA: Livro Modular - EMENTA: Arcabouco
+
+
+****** TURMA SELECIONADA ******
+
+Codigo: 3WD
+Horario de inicio: 17:00
+Horario de termino: 19:00
+Dias da semana: TER-QUI
+Quantidade de vagas: 40
+
+Notas: G1: -1.0	G2: -1.0	G3: -1.0	G4: -1.0
+ Faltas: -1
+
+
+ <!> Cursor ja posicionado no final da lista <!> 
+
+
+
+!!! Número de linhas lidas:          43
+!!! Número de casos de teste:        10
+!!! Número comandos corretos:        15
+!!! Número de falhas encontradas:     1
+
+!!! Foram encontrados problemas
+
+
+!!! Numero de espacos ainda alocados: 0

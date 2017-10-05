@@ -1,0 +1,43 @@
+// Script:    TesteTurma.script
+// Autor:     Cristiane - Guilherme - Leonardo - Nathália
+// Data:      04/out/2017
+// Propósito: Testar módulo Grade de Horário
+//            
+//
+
+== Declarar as condicoes de retorno
+=declararparm  OK                       int 0
+=declararparm  GradeVazia               int 1
+=declararparm  NaoHaMemoria             int 3
+=declararparm  DisciplinaNaoEncontrada  int 4
+=declararparm  FormatoInvalido          int 5
+
+== Declarar os conteúdos dos nós
+=declararparm  CodDisc1     string "INF1007"
+=declararparm  CodDisc2     string "INF1000"
+=declararparm  CodDisc3     string "INF1383"
+
+
+== Verificar Criar Grade de Horário
+=criarGrade            0 OK 
+
+== Verificar Inserer Grade de Horario
+=inserirInfoGrade      0 0 0 0 OK
+
+== Verificar Inserer Grade de Horario
+=inserirInfoGrade      1 1 1 0 OK
+
+== Verificar Inserer Grade de Horario
+=inserirInfoGrade      2 2 2 0 OK
+
+== Verificar Inserer Grade de Horario
+=inserirInfoGrade      3 3 3 0 OK
+
+== Verificar Exibir Grade de Horario
+=exibirGrade           0 OK
+
+== Verificar Elimina No
+=eliminaNo             0 CodDisc3 OK
+
+== Verificar Exibir Grade de Horario
+=exibirGrade           0 OK
