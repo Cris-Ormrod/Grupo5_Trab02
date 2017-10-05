@@ -1,24 +1,24 @@
 // Script:    TesteTurma.script
-// Autor:     Cristiane - Guilherme - Leonardo - Nath·lia
+// Autor:     Cristiane - Guilherme - Leonardo - Nath√°lia
 // Data:      04/out/2017
-// PropÛsito: Testar mÛdulo Grade de Hor·rio
+// Prop√≥sito: Testar m√≥dulo Grade de Hor√°rio
 //            
 //
 
 == Declarar as condicoes de retorno
 =declararparm  OK                       int 0
 =declararparm  GradeVazia               int 1
-=declararparm  NaoHaMemoria             int 3
-=declararparm  DisciplinaNaoEncontrada  int 4
-=declararparm  FormatoInvalido          int 5
+=declararparm  NaoHaMemoria             int 2
+=declararparm  DisciplinaNaoEncontrada  int 3
+=declararparm  FormatoInvalido          int 4
 
-== Declarar os conte˙dos dos nÛs
+== Declarar os conte√∫dos dos n√≥s
 =declararparm  CodDisc1     string "INF1007"
 =declararparm  CodDisc2     string "INF1000"
 =declararparm  CodDisc3     string "INF1383"
 
 
-== Verificar Criar Grade de Hor·rio
+== Verificar Criar Grade de Hor√°rio
 =criarGrade            0 OK 
 
 == Verificar Inserer Grade de Horario
@@ -51,7 +51,7 @@
 =alterarFaltasGrade    0 CodDisc2 4 DisciplinaNaoEncontrada
 =recuperar
 
-== Verificar Criar Grade de Hor·rio
+== Verificar Criar Grade de Hor√°rio
 =criarGrade            1 OK 
 
 == Verificar Exibir Grade de Horario
