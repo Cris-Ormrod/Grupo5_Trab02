@@ -1,21 +1,21 @@
 /***************************************************************************
-*  $MCI Módulo de implementação: GRA  Grade de Horário
+*  $MCI MÃ³dulo de implementaÃ§Ã£o: GRA  Grade de HorÃ¡rio
 *
 *  Arquivo gerado:              GradeHorario.c
 *  Letras identificadoras:      GRA
 *
-*  Nome da base de software:    Arcabouço para a automação de testes de programas redigidos em C
+*  Nome da base de software:    ArcabouÃ§o para a automaÃ§Ã£o de testes de programas redigidos em C
 *  Arquivo da base de software: D:\AUTOTEST\PROJETOS\LISTA.BSW
 *
-*  Projeto: INF 1301 / 1628 Automatização dos testes de módulos C
+*  Projeto: INF 1301 / 1628 AutomatizaÃ§Ã£o dos testes de mÃ³dulos C
 *  Gestor:  LES/DI/PUC-Rio
-*  Autores: cgln - Cristiane - Guilherme - Leonardo - Nathália
+*  Autores: cgln - Cristiane - Guilherme - Leonardo - NathÃ¡lia
 *
-*  $HA Histórico de evolução:
-*     Versão  Autor    Data     Observações
-*     3       cgln  04/out/2017 manutenção das funções do módulo
-*     2       cgln  03/out/2017 unificação de todos os módulos em um só projeto
-*     1       cgln  02/out/2017 início desenvolvimento
+*  $HA HistÃ³rico de evoluÃ§Ã£o:
+*     VersÃ£o  Autor    Data     ObservaÃ§Ãµes
+*     3       cgln  04/out/2017 manutenÃ§Ã£o das funÃ§Ãµes do mÃ³dulo
+*     2       cgln  03/out/2017 unificaÃ§Ã£o de todos os mÃ³dulos em um sÃ³ projeto
+*     1       cgln  02/out/2017 inÃ­cio desenvolvimento
 *
 ***************************************************************************/
 
@@ -60,14 +60,15 @@
 	struct gradehorario {
 
 		List * Grade ;
-			/* Cabeça da lista de grade horário */
+			/* CabeÃ§a da lista de grade horÃ¡rio */
+		int TotalCred;
 
 	} ;
 
-/*****  Código das funções exportadas pelo módulo  *****/
+/*****  CÃ³digo das funÃ§Ãµes exportadas pelo mÃ³dulo  *****/
 
 /***************************************************************************
-* Função: GRA  &Cria Grade Horario
+* FunÃ§Ã£o: GRA  &Cria Grade Horario
 *  ****/
 
 	GRA_tpCondRet GRA_CriaGradeHorario ( GradeHorario ** GradeHor )
@@ -82,13 +83,15 @@
 		{
 			return GRA_CondRetFaltouMemoria ;
 		} /* if */
+		(*GradeHor)->TotalCred = 0;
+		
 
 		return GRA_CondRetOk;
 
-	} /* Fim função: GRA  &Cria Grade Horario */
+	} /* Fim funÃ§Ã£o: GRA  &Cria Grade Horario */
 
 /***************************************************************************
-* Função: GRA  &Exibe Grade Horario
+* FunÃ§Ã£o: GRA  &Exibe Grade Horario
 *  ****/
 
 	GRA_tpCondRet GRA_ExibeGradeHorario ( GradeHorario *GradeHorario )
@@ -122,15 +125,16 @@
 
 		return  GRA_CondRetOk ;
 
-	} /* Fim função: GRA  &Exibe Grade Horario */
+	} /* Fim funÃ§Ã£o: GRA  &Exibe Grade Horario */
 
 /***************************************************************************
-* Função: GRA  &Insere Grade Horario
+* FunÃ§Ã£o: GRA  &Insere Grade Horario
 *  ****/
 	  
 	GRA_tpCondRet GRA_InsereGradeHorario( InfoGradeHorario * i, Disciplina * d, 
 		Turma * t, GradeHorario * GradeHorario)
 	{
+		int cred = 0;
 		
 			i = ( InfoGradeHorario * ) malloc( sizeof( InfoGradeHorario )) ;
 			i->disp = d ;
@@ -141,13 +145,15 @@
 			i->nota[3] = -1 ;
 			i->faltas = -1 ;
 			push_back( GradeHorario->Grade, (void * ) i ) ;
+			DIS_get_creditos(d, &cred);
+			(*GradeHor)->TotalCred += cred;
 
 		return GRA_CondRetOk ;
 
-	} /* Fim função: GRA  &Insere Grade Horario */
+	} /* Fim funÃ§Ã£o: GRA  &Insere Grade Horario */
 
 /***************************************************************************
-* Função: GRA  &Busca Grade Horario
+* FunÃ§Ã£o: GRA  &Busca Grade Horario
 *  ****/
 	  
 	InfoGradeHorario * GRA_BuscaGradeHorario( GradeHorario * GradeHorario, char * codDigitado )
@@ -174,10 +180,10 @@
 	
 			return NULL ;
 
-	} /* Fim função: GRA  &Busca Grade Horario */
+	} /* Fim funÃ§Ã£o: GRA  &Busca Grade Horario */
 
 /***************************************************************************
-* Função: GRA  &Altera Faltas
+* FunÃ§Ã£o: GRA  &Altera Faltas
 *  ****/
 
 	GRA_tpCondRet GRA_AlteraFaltas ( GradeHorario *GradeHorario,char *codBuscado,int novFalta )
@@ -194,10 +200,10 @@
 		noAlterado->faltas = novFalta ;
 		return GRA_CondRetOk ;
 
-	} /* Fim função: GRA  &Altera Faltas */
+	} /* Fim funÃ§Ã£o: GRA  &Altera Faltas */
 
 /***************************************************************************
-* Função: GRA  &Altera Nota
+* FunÃ§Ã£o: GRA  &Altera Nota
 *  ****/
 
 	GRA_tpCondRet GRA_AlteraNota( GradeHorario * GradeHorario, char * codBuscado, float g[4] )
@@ -224,10 +230,10 @@
 
 		return GRA_CondRetOk ;
 
-	} /* Fim função: GRA  &Altera Nota */
+	} /* Fim funÃ§Ã£o: GRA  &Altera Nota */
 
 /***************************************************************************
-* Função: GRA  &Elimina No
+* FunÃ§Ã£o: GRA  &Elimina No
 *  ****/
 
 	GRA_tpCondRet GRA_EliminaNo( GradeHorario * GradeHorario, char * codBuscado )
@@ -247,10 +253,10 @@
 
 		return GRA_CondRetOk ;
 
-	} /* Fim função: GRA  &Elimina No */
+	} /* Fim funÃ§Ã£o: GRA  &Elimina No */
 
 /***************************************************************************
-* Função: GRA  &Libera Grade Horario
+* FunÃ§Ã£o: GRA  &Libera Grade Horario
 *  ****/
 
 	GRA_tpCondRet GRA_LiberaGradeHorario( GradeHorario * GradeHorario )
@@ -259,10 +265,10 @@
 		free( GradeHorario ) ;
 		return GRA_CondRetOk ;
 
-	} /* Fim função: GRA  &Libera Grade Horario */
+	} /* Fim funÃ§Ã£o: GRA  &Libera Grade Horario */
 
 /***************************************************************************
-* Função: GRA  &Libera Info
+* FunÃ§Ã£o: GRA  &Libera Info
 *  ****/
 
 	GRA_tpCondRet GRA_LiberaInfo ( InfoGradeHorario * Info )
@@ -270,6 +276,6 @@
 		free( Info ) ;
 		return GRA_CondRetOk ;
 
-	} /* Fim função: GRA  &Libera Info */
+	} /* Fim funÃ§Ã£o: GRA  &Libera Info */
 
-/********** Fim do módulo de implementação: GRA  Grade de Horario **********/
+/********** Fim do mÃ³dulo de implementaÃ§Ã£o: GRA  Grade de Horario **********/
